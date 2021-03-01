@@ -7,18 +7,16 @@ class User {
   readonly id: string
 
   @Column()
-  name: string
+  name!: string
 
   @Column()
-  email: string
+  email!: string
 
   @CreateDateColumn()
-  created_at: Date
+  createdAt!: Date
 
-  constructor() {
-    if (!this.id) {
-      this.id = uuid()
-    }
+  constructor () {
+    this.id = uuid()
   }
 }
 
